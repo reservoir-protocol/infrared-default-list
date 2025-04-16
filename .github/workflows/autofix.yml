@@ -53,6 +53,10 @@ jobs:
         if: ${{ !cancelled() }}
         run: pnpm sort
 
+      - name: Generate typescript assets
+        if: ${{ !cancelled() }}
+        run: pnpm json-to-ts
+
       - name: Prettier
         if: ${{ !cancelled() }}
         run: pnpm format
