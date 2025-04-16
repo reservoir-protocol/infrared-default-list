@@ -42,7 +42,7 @@ for (const assetType of assetTypes) {
     const jsonContent = readFileSync(jsonPath, 'utf-8')
     const data = JSON.parse(jsonContent)
 
-    const tsContent = `export const ${assetType} = ${JSON.stringify(data[assetType], null, INDENTATION_SPACES)}`
+    const tsContent = `export const ${assetType} = ${JSON.stringify(data[assetType], null, INDENTATION_SPACES)}\n`
 
     writeFileSync(tsPath, tsContent)
     console.log(`Converted ${assetType}/${jsonFile} to TypeScript`)
@@ -56,7 +56,7 @@ const distPath = resolve(process.cwd(), `./${distDirName}/protocols.ts`)
 const jsonContent = readFileSync(srcPath, 'utf-8')
 const data = JSON.parse(jsonContent)
 
-const tsContent = `export const protocols = ${JSON.stringify(data.protocols, null, INDENTATION_SPACES)}`
+const tsContent = `export const protocols = ${JSON.stringify(data.protocols, null, INDENTATION_SPACES)}\n`
 
 writeFileSync(distPath, tsContent)
 console.log(`Converted protocols.json to TypeScript`)
