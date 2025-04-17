@@ -1,15 +1,16 @@
-name: autofix.ci
+name: json-to-ts
 
 on:
-  pull_request:
+  push:
+    branches:
+      - main
 
 permissions:
-  checks: write
   contents: write
 
 jobs:
-  autofix:
-    name: Lints, handles new assets, and commits changes
+  generate-types:
+    name: Generate TypeScript types from JSON
     runs-on: ubuntu-latest
 
     steps:
@@ -21,7 +22,6 @@ jobs:
         env:
           cache-name: cache-dependencies
         with:
-          # npm cache files are stored in `~/.npm` on Linux/macOS
           path: ~/.npm
           key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |
@@ -41,25 +41,10 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - name: Convert new assets to svg
-        if: ${{ !cancelled() }}
-        run: pnpm convert-new-assets-to-svg
+      - name: Generate TypeScript types
+        run: pnpm json-to-ts
 
-      - name: Clean assets
-        if: ${{ !cancelled() }}
-        run: pnpm clean-assets
-
-      - name: Sort
-        if: ${{ !cancelled() }}
-        run: pnpm sort
-
-      - name: Prettier
-        if: ${{ !cancelled() }}
-        run: pnpm format
-
-      - name: Type check
-        if: ${{ !cancelled() }}
-        run: pnpm type-check
-
-      - name: Commit clean assets
-        uses: autofix-ci/action@ff86a557419858bb967097bfc916833f5647fa8c
+      - name: Commit changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: update generated types"
