@@ -1324,7 +1324,7 @@
     {
       "address": "0x396a3d0b799b1a0b1eaa17e75b4dea412400860b",
       "decimals": 18,
-      "image": "weiBERA.svg",
+      "image": "weibera.svg",
       "mintUrl": "https://app.webera.finance/vault?token=ibera&type=bera-lst",
       "name": "webera-vault-ibera",
       "protocol": "webera",
@@ -1335,7 +1335,7 @@
     {
       "address": "0x55a050f76541c2554e9dfa3a0b4e665914bf92ea",
       "decimals": 18,
-      "image": "weWBERA.svg",
+      "image": "wewbera.svg",
       "mintUrl": "https://app.webera.finance/vault?token=bera&type=lend/borrow",
       "name": "webera-vault-wbera",
       "protocol": "webera",
