@@ -394,6 +394,11 @@
       "beraRewardsVault": "0x5e747644dd7a3e58485db8e836ca7654242dae2a",
       "slug": "webera-wewbera",
       "stakeTokenAddress": "0x55a050f76541c2554e9dfa3a0b4e665914bf92ea"
+    },
+    {
+      "beraRewardsVault": "0x9136df2daabe52a97340cce8c53d4c1314d52c18",
+      "slug": "dolomite-drUSD",
+      "stakeTokenAddress": "0x3000c6bf0aaeb813e252b584c4d9a82f99e7a71d"
     }
   ]
 }

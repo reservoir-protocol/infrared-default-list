@@ -1342,6 +1342,17 @@
       "symbol": "weWBERA",
       "type": "cdp",
       "underlyingTokens": ["0x6969696969696969696969696969696969696969"]
+    },
+    {
+      "address": "0x3000c6bf0aaeb813e252b584c4d9a82f99e7a71d",
+      "decimals": 18,
+      "image": "drUSD.svg",
+      "mintUrl": "https://app.reservoir.xyz/mint",
+      "name": "drUSD",
+      "protocol": "Dolomite",
+      "symbol": "drUSD",
+      "type": "cdp",
+      "underlyingTokens": ["0x09D4214C03D01F49544C0448DBE3A27f768F2b34"]
     }
   ]
 }
